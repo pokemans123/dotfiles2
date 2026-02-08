@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 # fastfetch. Will be disabled if above colorscript was chosen to install
 #fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
-nitch
+fastfetch -c $HOME/.config/fastfetch/config13.jsonc
 # Set-up icons for files/directories in terminal using lsd
 alias ls='lsd'
 alias l='ls -l'
