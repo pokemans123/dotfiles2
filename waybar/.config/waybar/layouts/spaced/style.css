@@ -1,0 +1,166 @@
+@import "colors.css";
+/* spaced/wide*/
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "CaskaydiaMono Nerd Font Propo";
+    font-size: 16px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: transparent;
+}
+
+tooltip {
+    background: rgba(43, 48, 59, 0.9);
+    border: 1px solid rgba(100, 114, 125, 0.5);
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: white;
+}
+
+/* Style for all modules */
+#workspaces,
+#clock,
+#battery,
+#tray,
+#pulseaudio,
+#network,
+#hardware,
+#custom-swaync,
+#custom-media,
+#custom-updater {
+    background: @background;
+    padding: 0 12px;
+    border-bottom: none; 
+    border-radius: 15px;
+    margin: 0 15px;
+}
+#tags {
+  background: @background;
+  border-radius: 15px;
+}
+
+#workspaces button,
+#tags button {
+    padding: 0 8px;
+    background: transparent;
+    color: white;
+    border-radius: 15px;
+    border-bottom: none;
+}
+#tags button:hover {
+    background: @secondary;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    transition: none;
+}
+
+
+#tags button.occupied {
+    color: @inverse_primary; 
+}
+
+#workspaces button.focused,
+#tags button.focused {
+    border-radius: 15px;
+    color: #000000;
+    background: linear-gradient(135deg,@source_color 50%,@tertiary 100%); 
+}
+
+
+#tags button.urgent {
+    color: @error;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+    border-radius: 15px;
+    padding: 0 12px;
+}
+
+#clock {
+    background-color: @background;
+    color: @tertiary;
+}
+
+#battery {
+    background-color: @background;
+    color: @primary;
+}
+
+#battery.charging {
+    background-color: @background;
+    color: @primary;
+}
+
+#battery.warning:not(.charging) {
+    background: @background;
+    color: @error;
+    animation-name: none;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#pulseaudio {
+    background-color: @background;
+    color: @primary;
+}
+
+#network {
+    background-color: @background;
+    color: @primary;
+}
+#backlight {
+  background-color: @background;
+  color: @primary;
+  border-radius: 15px;
+}
+#tray {
+    background-color: @background;
+    color: @primary;
+    border-radius: 15px;
+}
+
+#custom-updater {
+    background-color: @background;
+    color: @primary;
+    border-radius: 15px;
+}
+#hardware{
+  background-color: @background;
+  color:@tertiary;
+  padding:5px;
+}
+#custom-media{
+  background-color: @background;
+  color: @primary;
+  border-radius: 15px;
+}
+#custom-media.inactive{
+  background-color: @background;
+  color:@secondary;
+  border-radius: 15px;
+}
+#custom-swaync {
+  background-color: @background;
+  color:@primary;
+  border-radius: 15px;
+}

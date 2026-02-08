@@ -1,0 +1,22 @@
+#!/bin/env bash
+DIR="$HOME/Pictures/wallpapers"
+TERMINAL=foot
+WALLPAPER=$(
+  yad --file \
+    --title="Choose Wallpaper" \
+    --filename="$DIR/" \
+    --file-filter="Images | *.png *.jpg *.jpeg *.webp"
+)
+[ -z "$WALLPAPER" ] && exit 0
+swww img "$WALLPAPER" |
+  --transition-type grow \ 
+--transition-duration 0.6
+echo "$WALLPAPER" >"$HOME/.config/mango/.wallpaper_current"
+wallust run $WALLPAPER
+$HOME/.config/mango/reloadwaybar.sh
+$TERMINAL -e zsh -c "
+echo 'Password is required to change SDDM wallpaper';
+sudo cp -f \"$WALLPAPER\" /usr/share/sddm/themes/simple_sddm_2/Backgrounds/default;
+echo 'SDDM wallpaper updated';
+read -n 1 -s
+"

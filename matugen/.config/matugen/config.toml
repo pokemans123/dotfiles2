@@ -1,0 +1,68 @@
+[config.wallpaper]
+command = "swww"
+arguments = ["img", "--transition-type", "grow", "--transition-duration", "0.6"]
+set = true 
+
+[templates.mango]
+input_path = '~/.config/matugen/templates/mango-colors.conf'
+output_path = '~/.config/mango/colors.conf'
+post_hook = 'mmsg -d reload_config' 
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk3-colors.css'
+output_path = '~/.config/gtk-3.0/gtk.css'
+
+[templates.kitty]
+input_path='~/.config/matugen/templates/kitty-colors.conf'
+output_path='~/.config/kitty/matugen.conf'
+
+[templates.waybar]
+input_path='~/.config/matugen/templates/colors-waybar.css'
+output_path='~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
+#[templates.sddm]
+#input_path='~/.config/matugen/templates/sddm-theme.conf'
+#output_path='~/.config/matugen/sddm-colors.conf'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/tricolor'
+post_hook = '''bash -c "
+  # Remove old gradient colors
+  sed -i '/^gradient_color_/d; /^foreground = /d; /^gradient = /d' ~/.config/cava/config
+  # Extract just the color values (skip [color] header)
+  grep -E '^(gradient|foreground|background|horizontal)' ~/.config/cava/themes/tricolor >> ~/.config/cava/config
+  pkill -USR1 cava
+"'''
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+[config.custom_colors.red]
+color = "#FF0000"
+blend = true
+
+[config.custom_colors.green]
+color = "#00FF00"
+blend = true
+
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
+[config.custom_colors.blue]
+color = "#0000FF"
+blend = true
+
+[config.custom_colors.magenta]
+color = "#FF00FF"
+blend = true
+
+[config.custom_colors.cyan]
+color = "#00FFFF"
+blend = true
+
+[config.custom_colors.white]
+color = "#FFFFFF"
+blend = true
