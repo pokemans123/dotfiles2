@@ -39,30 +39,4 @@ post_hook = '''bash -c "
 [templates.rofi]
 input_path = '~/.config/matugen/templates/rofi-colors.rasi'
 output_path = '~/.config/rofi/colors.rasi'
-[config.custom_colors.red]
-color = "#FF0000"
-blend = true
 
-[config.custom_colors.green]
-color = "#00FF00"
-blend = true
-
-[config.custom_colors.yellow]
-color = "#FFFF00"
-blend = true
-
-[config.custom_colors.blue]
-color = "#0000FF"
-blend = true
-
-[config.custom_colors.magenta]
-color = "#FF00FF"
-blend = true
-
-[config.custom_colors.cyan]
-color = "#00FFFF"
-blend = true
-
-[config.custom_colors.white]
-color = "#FFFFFF"
-blend = true

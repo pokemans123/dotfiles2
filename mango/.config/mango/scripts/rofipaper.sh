@@ -33,11 +33,9 @@ fi
 # Apply wallpaper
 swww img "$WALLPAPER" --transition-type grow --transition-duration 0.6
 echo "$WALLPAPER" >"$HOME/.config/mango/.wallpaper_current"
-wallust run "$WALLPAPER"
-#wallust run -C ~/.config/wallust/wallust-kitty.toml "$WALLPAPER"
 matugen image "$WALLPAPER" -t scheme-content -m dark
 
-swaync-client -R
+swaync-client --reload-css
 
 # Update SDDM
 TERMINAL=kitty

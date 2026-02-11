@@ -38,6 +38,8 @@ alias ntich='nitch'
 alias i='sudo pacman -S'
 alias u='yay --noconfirm'
 autoload -U compinit && compinit
+alias cd..='cd ..'
+alias  fu='flatpak update -y'
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
 source <(fzf --zsh)
 
