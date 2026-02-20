@@ -36,7 +36,3 @@ post_hook = '''bash -c "
   pkill -USR1 cava
 "'''
 
-[templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/colors.rasi'
-

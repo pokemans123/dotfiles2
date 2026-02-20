@@ -1,0 +1,73 @@
+* {
+    bg: #1a1b2e;
+    fg: #c0caf5;
+    selected-bg: #2a2b3d;
+    selected-fg: #7aa2f7;
+    border-color: #3b3c56;
+    
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    background-color: @bg;
+    border: 1px;
+    border-color: @border-color;
+    border-radius: 12px;
+    width: 555px;
+    padding: 10px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    spacing: 8px;
+}
+
+inputbar {
+    background-color: #252637;
+    border-radius: 8px;
+    padding: 8px 12px;
+    children: [prompt, entry];
+    vertical-align: 0.5;
+}
+
+prompt {
+    enabled: true;
+    background-color: transparent;
+    text-color: #2a96ae;
+    border-radius: 16px;
+    border: 2px;
+    border-color: #2a96ae;
+    padding: 5px;
+    margin: 0 6px 0 0;
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "Search ...";
+    placeholder-color: #6b6d8a;
+    vertical-align: 0.5;
+}
+
+listview {
+    background-color: transparent;
+    lines: 9;
+    spacing: 2px;
+}
+
+element {
+    background-color: transparent;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+element selected {
+    background-color: @selected-bg;
+    text-color: #bd93f9;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
