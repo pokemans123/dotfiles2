@@ -21,9 +21,6 @@ input_path='~/.config/matugen/templates/colors-waybar.css'
 output_path='~/.config/waybar/colors.css'
 post_hook = 'pkill -SIGUSR2 waybar'
 
-#[templates.sddm]
-#input_path='~/.config/matugen/templates/sddm-theme.conf'
-#output_path='~/.config/matugen/sddm-colors.conf'
 
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
@@ -35,4 +32,6 @@ post_hook = '''bash -c "
   grep -E '^(gradient|foreground|background|horizontal)' ~/.config/cava/themes/tricolor >> ~/.config/cava/config
   pkill -USR1 cava
 "'''
-
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/themes/colors.rasi'
