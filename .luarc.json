@@ -1,5 +1,8 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "fhg",
+        "local",
+        "global"
     ]
 }

@@ -16,12 +16,14 @@ return {
      {
 	  "neovim/nvim-lspconfig",
 	  config = function()
+	       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 	       vim.lsp.enable("lua_ls")
 	       vim.lsp.enable("pyright")
 	       vim.lsp.enable("codebook")
 	       vim.lsp.enable("stylua")
 	       vim.lsp.enable("ruff")
 	       vim.lsp.enable("clangd")
+	       capabilities=capabilities
 	       vim.keymap.set('n','K',vim.lsp.buf.hover, {})
 	       vim.keymap.set('n','gD',vim.lsp.buf.declaration, {})
 	       vim.keymap.set({ 'n','v' }, '<leader>ca', vim.lsp.buf.code_action, {})

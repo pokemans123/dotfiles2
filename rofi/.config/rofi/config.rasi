@@ -4,5 +4,6 @@ configuration {
     modi: "drun";
     display-drun: "Apps:";
     terminal: "kitty";
+    case-sensitive: false;
 }
 @theme "~/.config/rofi/themes/sane.rasi"

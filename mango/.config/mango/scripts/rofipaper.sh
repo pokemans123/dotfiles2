@@ -9,7 +9,7 @@ while IFS= read -r WALLPAPER_PATH; do
   ROFI_MENU+="${WALLPAPER_NAME}\0icon\x1f${WALLPAPER_PATH}\n"
 done <<<"$FILES"
 
-CHOSEN_WALLPAPER=$(echo -e "$ROFI_MENU" | rofi -dmenu \
+CHOSEN_WALLPAPER=$(echo -e "$ROFI_MENU" | rofi -dmenu -i \
   -p "Select Wallpaper:" \
   -theme "$IMAGE_PICKER_CONFIG" \
   -markup-rows \
@@ -31,7 +31,7 @@ echo "$WALLPAPER" >"$HOME/.config/mango/.wallpaper_current"
 TERMINAL=kitty
 
 # Single terminal handles matugen (interactive), swaync reload, and SDDM update
-$TERMINAL -e zsh -c "
+$TERMINAL --app-id rofipaper -e zsh -c "
   echo '==> Generating color scheme...';
   matugen image \"$WALLPAPER\" -t scheme-content -m dark;
   echo '';

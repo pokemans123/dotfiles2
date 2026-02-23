@@ -1,8 +1,9 @@
+@import '~/.config/rofi/themes/colors.rasi'
 * {
     bg: #1a1b2e;
     fg: #c0caf5;
     selected-bg: #2a2b3d;
-    selected-fg: #7aa2f7;
+    selected-fg: @primary;
     border-color: #3b3c56;
     
     background-color: transparent;
@@ -64,7 +65,7 @@ element {
 
 element selected {
     background-color: @selected-bg;
-    text-color: #bd93f9;
+    text-color: @selected-fg;
 }
 
 element-text {

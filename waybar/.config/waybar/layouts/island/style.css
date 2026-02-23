@@ -68,7 +68,7 @@ tooltip label {
 #tags button.focused {
     border-radius: 15px;
     color: #000000;
-    background: linear-gradient(135deg,@source_color 50%,@tertiary 100%); 
+    background: linear-gradient(135deg,@primary 30%,@source_color 100%); 
 }
 
 

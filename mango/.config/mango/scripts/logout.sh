@@ -5,7 +5,7 @@
 OPTIONS="Shutdown\nReboot\nLock\nSuspend\nLogout"
 
 # Launch Rofi in dmenu mode
-CHOICE=$(printf "%b" "$OPTIONS" | rofi -dmenu -p "Power:" -lines 5)
+CHOICE=$(printf "%b" "$OPTIONS" | rofi -dmenu -i -p  "Power:" -lines 5)
 
 case "$CHOICE" in
 Shutdown)
