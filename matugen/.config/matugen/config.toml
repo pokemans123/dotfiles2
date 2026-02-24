@@ -3,10 +3,20 @@ command = "swww"
 arguments = ["img", "--transition-type", "grow", "--transition-duration", "0.6"]
 set = true 
 
+[templates.waybar]
+input_path='~/.config/matugen/templates/colors-waybar.css'
+output_path='~/.config/waybar/colors.css'
+post_hook = 'pkill -SIGUSR2 waybar'
+
 [templates.mango]
 input_path = '~/.config/matugen/templates/mango-colors.conf'
 output_path = '~/.config/mango/colors.conf'
 post_hook = 'mmsg -d reload_config' 
+
+[templates.kitty]
+input_path='~/.config/matugen/templates/kitty-colors.conf'
+output_path='~/.config/kitty/matugen.conf'
+post_hook='pkill -SIGUSR1 kitty'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/colors-waybar.css'
@@ -15,16 +25,14 @@ output_path = '~/.config/gtk-3.0/colors.css'
 input_path='~/.config/matugen/templates/colors-waybar.css'
 output_path='~/.config/gtk-4.0/colors.css'
 
-[templates.kitty]
-input_path='~/.config/matugen/templates/kitty-colors.conf'
-output_path='~/.config/kitty/matugen.conf'
-post_hook='pkill -SIGUSR1 kitty'
+[templates.spotify]
+input_path = '~/.config/matugen/templates/spicetify.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+post_hook = 'spicetify watch -s 2>&1 | sed "/Reloaded Spotify/q"'
 
-[templates.waybar]
-input_path='~/.config/matugen/templates/colors-waybar.css'
-output_path='~/.config/waybar/colors.css'
-post_hook = 'pkill -SIGUSR2 waybar'
-
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/themes/colors.rasi'
 
 [templates.cava]
 input_path = '~/.config/matugen/templates/cava-colors.ini'
@@ -36,10 +44,43 @@ post_hook = '''bash -c "
   grep -E '^(gradient|foreground|background|horizontal)' ~/.config/cava/themes/tricolor >> ~/.config/cava/config
   pkill -USR1 cava
 "'''
-[templates.rofi]
-input_path = '~/.config/matugen/templates/rofi-colors.rasi'
-output_path = '~/.config/rofi/themes/colors.rasi'
 
-[templates.nvim]
-input_path='~/.config/matugen/templates/nvim.lua'
-output_path='~/.config/nvim/lua/generated/colors.lua'
+# [templates.nvim]
+# input_path = '~/.config/nvim/pywal/matugen.lua'
+# output_path = '~/.cache/wal/base46-dark.lua'
+#
+# [templates.nvimlight]
+# input_path = '~/.config/nvim/pywal/matugen.lua'
+# output_path = '~/.cache/wal/base46-light.lua'
+#
+# [templates.pywal]
+# input_path = '~/.config/nvim/pywal/waltemplate'
+# output_path = '~/.cache/wal/colors'
+#
+# [config.custom_colors.red]
+# color = "#FF0000"
+# blend = true
+#
+# [config.custom_colors.green]
+# color = "#00FF00"
+# blend = true
+#
+# [config.custom_colors.yellow]
+# color = "#FFFF00"
+# blend = true
+#
+# [config.custom_colors.blue]
+# color = "#0000FF"
+# blend = true
+#
+# [config.custom_colors.magenta]
+# color = "#FF00FF"
+# blend = true
+#
+# [config.custom_colors.cyan]
+# color = "#00FFFF"
+# blend = true
+#
+# [config.custom_colors.white]
+# color = "#FFFFFF"
+# blend = true

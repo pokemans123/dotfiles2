@@ -35,6 +35,7 @@ $TERMINAL --app-id rofipaper -e zsh -c "
   echo '==> Generating color scheme...';
   matugen image \"$WALLPAPER\" -t scheme-content -m dark;
   echo '';
+  pkill -SIGUSR1 kitty
   echo '==> Reloading SwayNC CSS...';
   swaync-client --reload-css;
   echo '';
